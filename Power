@@ -1,0 +1,70 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Quvvata_yuksaltma
+{
+    class Program
+    {
+        static void Main() //Задание 3: Написать рекурсивную функцию нахождения степени числа.
+        {
+            int a; int q; int repeat;
+        link1:
+            Console.WriteLine("quvvata yuksaldilan ededi daxil edin");
+            bool check = Int32.TryParse(Console.ReadLine(), out a);
+            if (check)
+            {
+                Console.WriteLine(" ");
+            }
+            else
+            {
+                Console.WriteLine("parametr yalnış daxil edilib!"); goto link1;
+            }
+        link2:
+            Console.WriteLine("quvvata yuksaltma haddini daxil edin");
+            bool check2 = Int32.TryParse(Console.ReadLine(), out q);
+            if (check2)
+            {
+                Console.WriteLine(" ");
+            }
+            else
+            {
+                Console.WriteLine("parametr yalnış daxil edilib!"); goto link2;
+            }
+            if (q == 0)
+            { Console.WriteLine("result is 1");  goto link3; }
+            else if (q == 1)
+            { Console.WriteLine("result is " + a);  goto link3; }
+            else
+            {
+                int i = 2;
+                while (i < q)
+                {
+                    a = a * a; Console.WriteLine("Cavab: " + a);
+                    i++;
+                }
+                
+            }
+            link3:
+            Console.WriteLine("Yeniden yoxlamaq isteyirsiniz? (Bəli uchun 1 daxil edin)");
+            
+            repeat = Convert.ToInt32(Console.ReadLine());
+            if (repeat == 1) { goto link1; }
+            else
+            {
+                Console.WriteLine("Proqram sona chatdi");
+                Console.ReadKey();
+
+
+
+
+
+
+            }
+
+        }
+    }
+}
